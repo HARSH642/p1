@@ -1,30 +1,31 @@
 /* ==========================================================================
    CyberSense Ultra-Modern Landing Page CSS
-   Inspired by Giga AI, Noura, Glint & Premium SaaS Designs
-   Dark-First Aesthetic with Electric Blue (#3B82F6), Cyan Glow (#06B6D4) & Soft Teal (#10B981)
+   SaaS Aesthetic with Light / Dark High Contrast Accessibility
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 
 :root {
-    --bg-dark: #050B18;
-    --bg-dark-surface: #0B1528;
-    --bg-card: rgba(15, 23, 42, 0.7);
-    --bg-card-hover: rgba(30, 41, 59, 0.8);
+    /* Default Mode: Light Mode for senior accessibility */
+    --bg-main: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F1F5F9;
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: #E2E8F0;
+    --glass-border-hover: rgba(37, 99, 235, 0.5);
 
-    --electric-blue: #3B82F6;
-    --electric-blue-hover: #2563EB;
-    --cyan-glow: #06B6D4;
-    --teal-accent: #10B981;
-    --warning-red: #EF4444;
+    --electric-blue: #2563EB;
+    --electric-blue-hover: #1D4ED8;
+    --cyan-glow: #0284C7;
+    --teal-accent: #059669;
+    --warning-red: #DC2626;
 
-    --glass-bg: rgba(11, 21, 40, 0.75);
-    --glass-border: rgba(255, 255, 255, 0.12);
-    --glass-border-hover: rgba(59, 130, 246, 0.5);
-
-    --text-primary: #FFFFFF;
-    --text-secondary: #94A3B8;
-    --text-muted: #64748B;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #475569;
+    --text-heading: #0F172A;
+    --border-color: #E2E8F0;
 
     --font-base: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-heading: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
@@ -36,8 +37,33 @@
     --radius-md: 16px;
     --radius-sm: 10px;
 
+    --shadow-blue-glow: 0 10px 30px -5px rgba(37, 99, 235, 0.15);
+    --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* Dark Mode / High Contrast Styling */
+body.high-contrast {
+    --bg-main: #050B18;
+    --bg-surface: #0B1528;
+    --bg-card: rgba(15, 23, 42, 0.8);
+    --bg-card-hover: rgba(30, 41, 59, 0.9);
+    --glass-bg: rgba(11, 21, 40, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-border-hover: rgba(59, 130, 246, 0.5);
+
+    --electric-blue: #3B82F6;
+    --electric-blue-hover: #2563EB;
+    --cyan-glow: #06B6D4;
+    --teal-accent: #10B981;
+    --warning-red: #EF4444;
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --text-heading: #FFFFFF;
+    --border-color: rgba(255, 255, 255, 0.12);
+
     --shadow-blue-glow: 0 0 50px -10px rgba(59, 130, 246, 0.35);
-    --shadow-cyan-glow: 0 0 50px -10px rgba(6, 182, 212, 0.3);
     --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
 }
 
@@ -54,17 +80,12 @@ html {
 
 body {
     font-family: var(--font-base);
-    background-color: var(--bg-dark);
+    background-color: var(--bg-main);
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    background-image:
-        radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.18) 0%, transparent 60%),
-        radial-gradient(circle at 80% 40%, rgba(6, 182, 212, 0.12) 0%, transparent 50%),
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -84,34 +105,6 @@ body {
 .reveal-text.visible, .reveal-card.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Light / High Contrast Override */
-body.high-contrast {
-    --bg-dark: #FFFFFF;
-    --bg-dark-surface: #F8FAFC;
-    --bg-card: #FFFFFF;
-    --glass-bg: rgba(255, 255, 255, 0.9);
-    --glass-border: #E2E8F0;
-    --text-primary: #0F172A;
-    --text-secondary: #334155;
-    --text-muted: #64748B;
-    background-image: none;
-}
-
-body.high-contrast .navbar,
-body.high-contrast .benefit-card,
-body.high-contrast .feature-item,
-body.high-contrast .testimonial-card,
-body.high-contrast .bento-card {
-    background: #FFFFFF;
-    border-color: #CBD5E1;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-body.high-contrast .cta-banner-container {
-    background: #0F172A;
-    color: #FFFFFF;
 }
 
 /* Accessibility Top Bar */
@@ -138,9 +131,9 @@ body.high-contrast .cta-banner-container {
 }
 
 .access-btn {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
     color: #FFFFFF;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 6px 14px;
     border-radius: var(--radius-pill);
     font-size: 0.85rem;
@@ -149,13 +142,13 @@ body.high-contrast .cta-banner-container {
 }
 
 .access-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .lang-selector select {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
     color: #FFFFFF;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 6px 14px;
     border-radius: var(--radius-pill);
     font-size: 0.85rem;
@@ -168,7 +161,7 @@ body.high-contrast .cta-banner-container {
     color: #FFFFFF;
 }
 
-/* Ultra-Modern Floating Nav */
+/* Floating Glassmorphic Header Navbar */
 .navbar {
     position: sticky;
     top: 16px;
@@ -181,7 +174,7 @@ body.high-contrast .cta-banner-container {
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-pill);
     padding: 12px 28px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-card);
 }
 
 .nav-container {
@@ -206,7 +199,7 @@ body.high-contrast .cta-banner-container {
     font-family: var(--font-heading);
     font-size: 1.6rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--text-heading);
     letter-spacing: -0.5px;
 }
 
@@ -222,14 +215,14 @@ body.high-contrast .cta-banner-container {
 
 .nav-links a {
     text-decoration: none;
-    color: #CBD5E1;
+    color: var(--text-secondary);
     font-weight: 600;
     font-size: 0.98rem;
     transition: color 0.2s;
 }
 
 .nav-links a:hover {
-    color: #FFFFFF;
+    color: var(--electric-blue);
 }
 
 /* Modern Glowing Buttons */
@@ -253,33 +246,33 @@ body.high-contrast .cta-banner-container {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
     color: #FFFFFF;
-    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
 }
 
 .btn-primary:hover {
-    box-shadow: 0 15px 35px -5px rgba(59, 130, 246, 0.7);
+    box-shadow: 0 15px 35px -5px rgba(37, 99, 235, 0.6);
     transform: translateY(-2px);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
-    color: #FFFFFF;
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: var(--bg-card-hover);
+    border-color: var(--electric-blue);
     transform: translateY(-2px);
 }
 
 .btn-accent {
     background: #FFFFFF;
     color: #0F172A;
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .btn-accent:hover {
@@ -303,7 +296,7 @@ body.high-contrast .cta-banner-container {
 
 /* Hero Section */
 .hero-section {
-    padding: 70px 0 110px 0;
+    padding: 60px 0 100px 0;
     position: relative;
 }
 
@@ -322,23 +315,27 @@ body.high-contrast .cta-banner-container {
 }
 
 .shield-badge {
-    background: rgba(59, 130, 246, 0.15);
-    color: #60A5FA;
+    background: rgba(37, 99, 235, 0.12);
+    color: var(--electric-blue);
     padding: 8px 18px;
     border-radius: var(--radius-pill);
     font-weight: 700;
     font-size: 0.9rem;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid rgba(37, 99, 235, 0.25);
 }
 
 .rating-badge {
-    background: rgba(245, 158, 11, 0.15);
-    color: #FBBF24;
+    background: rgba(245, 158, 11, 0.12);
+    color: #D97706;
     padding: 8px 16px;
     border-radius: var(--radius-pill);
     font-weight: 700;
     font-size: 0.9rem;
-    border: 1px solid rgba(245, 158, 11, 0.3);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+body.high-contrast .rating-badge {
+    color: #FBBF24;
 }
 
 .main-headline {
@@ -346,33 +343,32 @@ body.high-contrast .cta-banner-container {
     font-size: 3.5rem;
     line-height: 1.15;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--text-heading);
     margin-bottom: 20px;
     letter-spacing: -1px;
 }
 
 .supporting-headline {
     font-size: 1.3rem;
-    color: #94A3B8;
+    color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 28px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .benefit-summary-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-left: 4px solid var(--electric-blue);
     padding: 22px 26px;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-card);
     margin-bottom: 32px;
-    backdrop-filter: blur(12px);
 }
 
 .benefit-summary-text {
     font-size: 1.1rem;
-    color: #E2E8F0;
+    color: var(--text-primary);
     line-height: 1.6;
 }
 
@@ -389,7 +385,7 @@ body.high-contrast .cta-banner-container {
     gap: 20px;
     font-size: 0.98rem;
     font-weight: 600;
-    color: #64748B;
+    color: var(--text-muted);
 }
 
 .trust-item {
@@ -411,8 +407,8 @@ body.high-contrast .cta-banner-container {
 
 .float-badge {
     position: absolute;
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid var(--glass-border);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     backdrop-filter: blur(16px);
     padding: 12px 20px;
     border-radius: var(--radius-md);
@@ -422,7 +418,7 @@ body.high-contrast .cta-banner-container {
     gap: 10px;
     font-weight: 700;
     font-size: 0.9rem;
-    color: #FFFFFF;
+    color: var(--text-primary);
     z-index: 10;
     animation: floatAnim 4s ease-in-out infinite;
 }
@@ -457,7 +453,7 @@ body.high-contrast .cta-banner-container {
     background: #020617;
     border-radius: 48px;
     padding: 16px;
-    box-shadow: var(--shadow-blue-glow);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
     border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -558,7 +554,7 @@ body.high-contrast .cta-banner-container {
     border-radius: 18px;
     padding: 16px;
     margin-top: 14px;
-    border: 1px solid var(--glass-border);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .scam-explanation h4 {
@@ -595,7 +591,7 @@ body.high-contrast .cta-banner-container {
 
 /* Section Common Styling */
 .section-padding {
-    padding: 110px 0;
+    padding: 100px 0;
 }
 
 .section-header {
@@ -605,15 +601,15 @@ body.high-contrast .cta-banner-container {
 }
 
 .section-pill {
-    background: rgba(59, 130, 246, 0.15);
-    color: #60A5FA;
+    background: rgba(37, 99, 235, 0.12);
+    color: var(--electric-blue);
     padding: 6px 16px;
     border-radius: var(--radius-pill);
     font-weight: 700;
     font-size: 0.85rem;
     display: inline-block;
     margin-bottom: 14px;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid rgba(37, 99, 235, 0.25);
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
@@ -621,7 +617,7 @@ body.high-contrast .cta-banner-container {
 .section-title {
     font-family: var(--font-heading);
     font-size: 2.85rem;
-    color: #FFFFFF;
+    color: var(--text-heading);
     font-weight: 700;
     margin-bottom: 16px;
     letter-spacing: -0.8px;
@@ -629,7 +625,7 @@ body.high-contrast .cta-banner-container {
 
 .section-subtitle {
     font-size: 1.2rem;
-    color: #94A3B8;
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
@@ -641,17 +637,18 @@ body.high-contrast .cta-banner-container {
 }
 
 .benefit-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     backdrop-filter: blur(16px);
     padding: 38px 30px;
     border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .benefit-card:hover {
     transform: translateY(-6px);
-    border-color: var(--glass-border-hover);
+    border-color: var(--electric-blue);
     box-shadow: var(--shadow-blue-glow);
 }
 
@@ -665,22 +662,22 @@ body.high-contrast .cta-banner-container {
     margin-bottom: 24px;
 }
 
-.benefit-icon-wrapper.teal { background: rgba(16, 185, 129, 0.15); }
-.benefit-icon-wrapper.red { background: rgba(239, 68, 68, 0.15); }
-.benefit-icon-wrapper.blue { background: rgba(59, 130, 246, 0.15); }
+.benefit-icon-wrapper.teal { background: rgba(16, 185, 129, 0.12); }
+.benefit-icon-wrapper.red { background: rgba(239, 68, 68, 0.12); }
+.benefit-icon-wrapper.blue { background: rgba(37, 99, 235, 0.12); }
 
 .b-icon { font-size: 2rem; }
 
 .benefit-card h3 {
     font-size: 1.4rem;
-    color: #FFFFFF;
+    color: var(--text-heading);
     margin-bottom: 12px;
     font-weight: 700;
 }
 
 .benefit-card p {
     font-size: 1.02rem;
-    color: #94A3B8;
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
@@ -694,22 +691,23 @@ body.high-contrast .cta-banner-container {
 .feature-item {
     display: flex;
     gap: 20px;
-    background: var(--glass-bg);
+    background: var(--bg-card);
     backdrop-filter: blur(16px);
     padding: 30px;
     border-radius: var(--radius-lg);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
     transition: all 0.3s ease;
 }
 
 .feature-item:hover {
     transform: translateY(-4px);
-    border-color: var(--glass-border-hover);
+    border-color: var(--electric-blue);
 }
 
 .feature-icon {
     font-size: 2.2rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(37, 99, 235, 0.08);
     width: 60px;
     height: 60px;
     display: flex;
@@ -721,14 +719,14 @@ body.high-contrast .cta-banner-container {
 
 .feature-text h3 {
     font-size: 1.25rem;
-    color: #FFFFFF;
+    color: var(--text-heading);
     margin-bottom: 8px;
     font-weight: 700;
 }
 
 .feature-text p {
     font-size: 1rem;
-    color: #94A3B8;
+    color: var(--text-secondary);
 }
 
 /* 4 Social Proof Section */
@@ -739,11 +737,12 @@ body.high-contrast .cta-banner-container {
 }
 
 .testimonial-card {
-    background: var(--glass-bg);
+    background: var(--bg-card);
     backdrop-filter: blur(16px);
     padding: 36px;
     border-radius: var(--radius-xl);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -756,7 +755,7 @@ body.high-contrast .cta-banner-container {
 
 .testimonial-quote {
     font-size: 1.08rem;
-    color: #E2E8F0;
+    color: var(--text-primary);
     line-height: 1.6;
     font-style: italic;
     margin-bottom: 28px;
@@ -771,7 +770,7 @@ body.high-contrast .cta-banner-container {
 .author-avatar {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
     color: #FFFFFF;
     border-radius: 50%;
     display: flex;
@@ -783,28 +782,27 @@ body.high-contrast .cta-banner-container {
 
 .author-name {
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--text-heading);
     font-size: 1.05rem;
 }
 
 .author-location {
     font-size: 0.88rem;
-    color: #64748B;
+    color: var(--text-muted);
 }
 
-/* CTA Banner Modern Glass Container */
+/* CTA Banner Container */
 .cta-banner-section {
-    padding: 0 24px 110px 24px;
+    padding: 0 24px 100px 24px;
 }
 
 .cta-banner-container {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+    background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%);
     border-radius: var(--radius-xl);
-    border: 1px solid var(--glass-border-hover);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 80px 40px;
     text-align: center;
-    box-shadow: var(--shadow-blue-glow);
-    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
 }
 
 .cta-banner-content h2 {
@@ -818,7 +816,7 @@ body.high-contrast .cta-banner-container {
 
 .cta-banner-content p {
     font-size: 1.3rem;
-    color: #94A3B8;
+    color: #CBD5E1;
     max-width: 680px;
     margin: 0 auto 40px auto;
 }
@@ -837,14 +835,14 @@ body.high-contrast .cta-banner-container {
     font-size: 1.1rem;
     font-weight: 700;
     padding: 18px 32px;
-    border: 1px solid var(--glass-border);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: var(--radius-pill);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
     transition: all 0.2s;
 }
 
 .phone-link-btn:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 /* Footer */
@@ -913,7 +911,7 @@ body.high-contrast .cta-banner-container {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(2, 6, 23, 0.85);
+    background: rgba(2, 6, 23, 0.8);
     backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
@@ -930,14 +928,14 @@ body.high-contrast .cta-banner-container {
 }
 
 .modal-content {
-    background: #0F172A;
-    border: 1px solid var(--glass-border);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     width: 90%;
     max-width: 520px;
     border-radius: var(--radius-xl);
     padding: 40px;
     position: relative;
-    box-shadow: var(--shadow-blue-glow);
+    box-shadow: var(--shadow-card);
     transform: translateY(80px) scale(0.92);
     opacity: 0;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -955,7 +953,7 @@ body.high-contrast .cta-banner-container {
     background: none;
     border: none;
     font-size: 2.2rem;
-    color: #64748B;
+    color: var(--text-muted);
     cursor: pointer;
 }
 
@@ -968,12 +966,12 @@ body.high-contrast .cta-banner-container {
 
 .modal-header h3 {
     font-size: 1.75rem;
-    color: #FFFFFF;
+    color: var(--text-heading);
     margin-top: 8px;
 }
 
 .modal-header p {
-    color: #94A3B8;
+    color: var(--text-secondary);
 }
 
 .form-group {
@@ -983,20 +981,20 @@ body.high-contrast .cta-banner-container {
 .form-group label {
     display: block;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--text-primary);
     margin-bottom: 8px;
 }
 
 .form-input {
     width: 100%;
     padding: 16px 18px;
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     font-size: 1.05rem;
     font-family: inherit;
     outline: none;
-    background: #020617;
-    color: #FFFFFF;
+    background: var(--bg-main);
+    color: var(--text-primary);
     transition: border-color 0.2s;
 }
 
