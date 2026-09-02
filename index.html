@@ -34,14 +34,14 @@
         </div>
     </div>
 
-    <!-- Navigation Header -->
+    <!-- Modern Glassmorphic Floating Header Nav -->
     <header class="navbar">
-        <div class="container nav-container">
+        <div class="nav-container">
             <a href="#" class="brand-logo">
                 <div class="logo-icon">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L3 7V12C3 17.55 6.84 22.74 12 24C17.16 22.74 21 17.55 21 12V7L12 2Z" fill="#102A43" stroke="#2CB67D" stroke-width="2"/>
-                        <path d="M12 6L6 9.5V12C6 15.7 8.5 19.1 12 20C15.5 19.1 18 15.7 18 12V9.5L12 6Z" fill="#2CB67D"/>
+                        <path d="M12 2L3 7V12C3 17.55 6.84 22.74 12 24C17.16 22.74 21 17.55 21 12V7L12 2Z" fill="#1E3A8A" stroke="#10B981" stroke-width="2"/>
+                        <path d="M12 6L6 9.5V12C6 15.7 8.5 19.1 12 20C15.5 19.1 18 15.7 18 12V9.5L12 6Z" fill="#10B981"/>
                         <path d="M10 12L11.5 13.5L14.5 9.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
@@ -51,17 +51,19 @@
                 <a href="#benefits" data-i18n="nav_why">Why CyberSense</a>
                 <a href="#features" data-i18n="nav_features">Key Features</a>
                 <a href="#testimonials" data-i18n="nav_stories">Stories</a>
-                <a href="#cta" class="btn btn-primary nav-cta open-cta-modal" data-i18n="nav_cta">Start Learning</a>
+                <a href="#cta" class="btn btn-primary open-cta-modal" data-i18n="nav_cta">Start Learning</a>
             </nav>
         </div>
     </header>
 
     <!-- Main Hero Section (1A, 1B, 1C, 1D, 2) -->
     <section class="hero-section">
+        <div class="hero-bg-glow"></div>
         <div class="container hero-container">
             <div class="hero-text">
-                <div class="badge-tag">
+                <div class="hero-badge-wrapper">
                     <span class="shield-badge" data-i18n="hero_badge">🛡️ Designed Specifically for Seniors (60+)</span>
+                    <span class="rating-badge">⭐ 4.9/5 Rating</span>
                 </div>
                 <!-- 1A Main Headline -->
                 <h1 class="main-headline" data-i18n="main_headline">Stay Safe Online — Made Simple for Seniors</h1>
@@ -96,45 +98,59 @@
 
             <!-- 1C Hero Shot (Interactive Smartphone Mockup displaying scam breakdown) -->
             <div class="hero-shot-container" id="hero-demo">
-                <div class="phone-mockup">
-                    <div class="phone-speaker"></div>
-                    <div class="phone-screen">
-                        <div class="phone-header">
-                            <span class="phone-time">10:42 AM</span>
-                            <span class="phone-status" data-i18n="phone_status">📱 Messages</span>
-                        </div>
+                <div class="phone-wrapper">
+                    <!-- Modern Floating Badge 1 -->
+                    <div class="float-badge top-left">
+                        <span class="badge-dot green"></span>
+                        <span>10,000+ Seniors Safe</span>
+                    </div>
 
-                        <div class="scam-alert-banner">
-                            <span class="alert-icon">⚠️</span>
-                            <span data-i18n="phone_alert">Interactive Scam Detector</span>
-                        </div>
+                    <!-- Modern Floating Badge 2 -->
+                    <div class="float-badge bottom-right">
+                        <span class="badge-dot blue"></span>
+                        <span>100% Verified Scam Detector</span>
+                    </div>
 
-                        <!-- Mock Text Message -->
-                        <div class="message-bubble scam-message">
-                            <div class="sender-info">
-                                <span class="sender-name" data-i18n="phone_sender">Unknown (+61 400 123 999)</span>
-                                <span class="time-stamp" data-i18n="phone_time">Just now</span>
+                    <div class="phone-mockup">
+                        <div class="phone-speaker"></div>
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <span class="phone-time">10:42 AM</span>
+                                <span class="phone-status" data-i18n="phone_status">📱 Messages</span>
                             </div>
-                            <p class="message-text">
-                                <span class="highlight-scam" data-i18n="scam_urgent">URGENT:</span> <span data-i18n="scam_msg_text">Your bank account is locked! Click here immediately to verify:</span> <span class="highlight-link">bit.ly/bank-security-fix</span>
-                            </p>
-                            <div class="danger-tag">
-                                <span class="tag-icon">🚨</span> <span data-i18n="scam_tag">FAKE SCAM MESSAGE DETECTED</span>
-                            </div>
-                        </div>
 
-                        <!-- Interactive Explanation Card -->
-                        <div class="scam-explanation">
-                            <h4 data-i18n="exp_title">How CyberSense protects you:</h4>
-                            <ul>
-                                <li class="check-item danger">
-                                    <span class="icon-bad">❌</span> <span><strong data-i18n="exp_warn_bold">Urgent Warning:</strong> <span data-i18n="exp_warn_text">Banks never ask you to click links in text messages.</span></span>
-                                </li>
-                                <li class="check-item safe">
-                                    <span class="icon-good">✅</span> <span><strong data-i18n="exp_safe_bold">Safe Action:</strong> <span data-i18n="exp_safe_text">Tap our 1-Touch button to call your official bank.</span></span>
-                                </li>
-                            </ul>
-                            <button class="phone-action-btn open-cta-modal" data-i18n="phone_action_btn">Practice Spotting Scams Now</button>
+                            <div class="scam-alert-banner">
+                                <span class="alert-icon">⚠️</span>
+                                <span data-i18n="phone_alert">Interactive Scam Detector</span>
+                            </div>
+
+                            <!-- Mock Text Message -->
+                            <div class="message-bubble scam-message">
+                                <div class="sender-info">
+                                    <span class="sender-name" data-i18n="phone_sender">Unknown (+61 400 123 999)</span>
+                                    <span class="time-stamp" data-i18n="phone_time">Just now</span>
+                                </div>
+                                <p class="message-text">
+                                    <span class="highlight-scam" data-i18n="scam_urgent">URGENT:</span> <span data-i18n="scam_msg_text">Your bank account is locked! Click here immediately to verify:</span> <span class="highlight-link">bit.ly/bank-security-fix</span>
+                                </p>
+                                <div class="danger-tag">
+                                    <span class="tag-icon">🚨</span> <span data-i18n="scam_tag">FAKE SCAM MESSAGE DETECTED</span>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Explanation Card -->
+                            <div class="scam-explanation">
+                                <h4 data-i18n="exp_title">How CyberSense protects you:</h4>
+                                <ul>
+                                    <li class="check-item danger">
+                                        <span class="icon-bad">❌</span> <span><strong data-i18n="exp_warn_bold">Urgent Warning:</strong> <span data-i18n="exp_warn_text">Banks never ask you to click links in text messages.</span></span>
+                                    </li>
+                                    <li class="check-item safe">
+                                        <span class="icon-good">✅</span> <span><strong data-i18n="exp_safe_bold">Safe Action:</strong> <span data-i18n="exp_safe_text">Tap our 1-Touch button to call your official bank.</span></span>
+                                    </li>
+                                </ul>
+                                <button class="phone-action-btn open-cta-modal" data-i18n="phone_action_btn">Practice Spotting Scams Now</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -143,9 +159,10 @@
     </section>
 
     <!-- 3 Show Them the Benefits Section -->
-    <section class="benefits-section" id="benefits">
+    <section class="benefits-section section-padding" id="benefits">
         <div class="container">
             <div class="section-header">
+                <span class="section-pill">Why Choose Us</span>
                 <h2 class="section-title" data-i18n="b_title">Why Seniors Love CyberSense</h2>
                 <p class="section-subtitle" data-i18n="b_subtitle">We break down online safety into bite-sized visual steps designed for clarity, comfort, and safety.</p>
             </div>
@@ -191,9 +208,10 @@
     </section>
 
     <!-- Key Features & Innovation Highlights -->
-    <section class="features-section" id="features">
+    <section class="features-section section-padding" id="features">
         <div class="container">
             <div class="section-header">
+                <span class="section-pill">Smart Features</span>
                 <h2 class="section-title" data-i18n="f_title">Key Features Built For You</h2>
                 <p class="section-subtitle" data-i18n="f_subtitle">Designed with input from seniors, family members, and digital safety experts.</p>
             </div>
@@ -235,9 +253,10 @@
     </section>
 
     <!-- 4 Social Proof Section -->
-    <section class="testimonials-section" id="testimonials">
+    <section class="testimonials-section section-padding" id="testimonials">
         <div class="container">
             <div class="section-header">
+                <span class="section-pill">Real Stories</span>
                 <h2 class="section-title" data-i18n="t_title">Trusted by Seniors & Loved Ones</h2>
                 <p class="section-subtitle" data-i18n="t_subtitle">Read how CyberSense is helping seniors browse and bank online with confidence.</p>
             </div>
