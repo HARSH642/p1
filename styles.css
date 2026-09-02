@@ -73,6 +73,19 @@ body {
     padding: 0 24px;
 }
 
+/* Scroll-Reveal Invisible-to-Visible Text & Card Animations */
+.reveal-text, .reveal-card {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-text.visible, .reveal-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Light / High Contrast Override */
 body.high-contrast {
     --bg-dark: #FFFFFF;
@@ -893,7 +906,7 @@ body.high-contrast .cta-banner-container {
     color: #475569;
 }
 
-/* Modal Styling */
+/* Modal Popup Card Animation From Bottom */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -908,7 +921,7 @@ body.high-contrast .cta-banner-container {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 .modal-overlay.active {
@@ -925,6 +938,14 @@ body.high-contrast .cta-banner-container {
     padding: 40px;
     position: relative;
     box-shadow: var(--shadow-blue-glow);
+    transform: translateY(80px) scale(0.92);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
 }
 
 .modal-close {
