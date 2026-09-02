@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initModal();
     initAccessibilityTools();
     initLanguageSelector();
+    initScrollRevealAnimations();
 });
 
 // 1. Call to Action Modal Handling
@@ -93,7 +94,37 @@ function initAccessibilityTools() {
     }
 }
 
-// 3. Multilingual Support (Full Page Translations)
+// 3. Scroll Reveal Animations (Invisible to Visible on Scroll)
+function initScrollRevealAnimations() {
+    const revealElements = document.querySelectorAll('.reveal-text, .reveal-card, .benefit-card, .feature-item, .testimonial-card, .section-header');
+
+    revealElements.forEach(el => {
+        if (!el.classList.contains('reveal-text') && !el.classList.contains('reveal-card')) {
+            el.classList.add('reveal-card');
+        }
+    });
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-text, .reveal-card').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// 4. Multilingual Support (Full Page Translations)
 const translations = {
     en: {
         access_label: "Senior Accessibility Tools:",
