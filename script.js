@@ -56,7 +56,7 @@ function handleSignupSubmit() {
     }
 }
 
-// 2. Accessibility Controls (Font Size & High Contrast)
+// 2. Accessibility Controls (Font Size & Dark Mode Toggle)
 function initAccessibilityTools() {
     const fontBtn = document.getElementById('toggle-font-size');
     const fontStatus = document.getElementById('font-size-status');
@@ -64,7 +64,7 @@ function initAccessibilityTools() {
     const contrastStatus = document.getElementById('contrast-status');
 
     let isLargeFont = false;
-    let isHighContrast = false;
+    let isDarkMode = false;
 
     if (fontBtn) {
         fontBtn.addEventListener('click', () => {
@@ -81,13 +81,13 @@ function initAccessibilityTools() {
 
     if (contrastBtn) {
         contrastBtn.addEventListener('click', () => {
-            isHighContrast = !isHighContrast;
-            if (isHighContrast) {
+            isDarkMode = !isDarkMode;
+            if (isDarkMode) {
                 document.body.classList.add('high-contrast');
-                contrastStatus.textContent = 'High Contrast';
+                contrastStatus.textContent = 'On';
             } else {
                 document.body.classList.remove('high-contrast');
-                contrastStatus.textContent = 'Normal';
+                contrastStatus.textContent = 'Off';
             }
         });
     }
@@ -98,7 +98,7 @@ const translations = {
     en: {
         access_label: "Senior Accessibility Tools:",
         text_size_label: "Text Size:",
-        contrast_label: "Contrast:",
+        contrast_label: "Dark Mode:",
         nav_why: "Why CyberSense",
         nav_features: "Key Features",
         nav_stories: "Stories",
@@ -186,7 +186,7 @@ const translations = {
     hi: {
         access_label: "वरिष्ठ सुगम उपकरण:",
         text_size_label: "अक्षर का आकार:",
-        contrast_label: "विपरीतता (कंट्रास्ट):",
+        contrast_label: "डार्क मोड:",
         nav_why: "साइबरसेंस क्यों",
         nav_features: "मुख्य विशेषताएं",
         nav_stories: "कहानियां",
@@ -272,9 +272,9 @@ const translations = {
         modal_close_btn: "बंद करें"
     },
     zh: {
-        access_label: "长者无障碍无障碍工具：",
+        access_label: "长者无障碍工具：",
         text_size_label: "字体大小：",
-        contrast_label: "对比度：",
+        contrast_label: "深色模式：",
         nav_why: "为什么选择 CyberSense",
         nav_features: "主要功能",
         nav_stories: "真实故事",
@@ -362,7 +362,7 @@ const translations = {
     gu: {
         access_label: "વરિષ્ઠ સુગમતા સાધનો:",
         text_size_label: "લખાણનું માપ:",
-        contrast_label: "કોન્ટ્રાસ્ટ:",
+        contrast_label: "ડાર્ક મોડ:",
         nav_why: "શા માટે સાયબરસાઇન્સ",
         nav_features: "મુખ્ય વિશેષતાઓ",
         nav_stories: "વાર્તાઓ",
