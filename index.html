@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSense — Cyber Safety Made Simple for Seniors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Accessibility Bar -->
+    <div class="accessibility-bar" aria-label="Accessibility controls">
+        <div class="container accessibility-content">
+            <span class="accessibility-label" data-i18n="access_label">Senior Accessibility Tools:</span>
+            <div class="accessibility-controls">
+                <button id="toggle-font-size" class="access-btn" title="Toggle Large Text Mode">
+                    <span class="icon">🔍</span> <span data-i18n="text_size_label">Text Size:</span> <strong id="font-size-status">Standard</strong>
+                </button>
+                <button id="toggle-contrast" class="access-btn" title="Toggle High Contrast Mode">
+                    <span class="icon">👁️</span> <span data-i18n="contrast_label">Contrast:</span> <strong id="contrast-status">Normal</strong>
+                </button>
+                <div class="lang-selector">
+                    <span class="icon">🌐</span>
+                    <select id="language-select" aria-label="Select Language">
+                        <option value="en">English (AU/UK)</option>
+                        <option value="hi">Hindi (हिंदी)</option>
+                        <option value="zh">Mandarin (中文)</option>
+                        <option value="gu">Gujarati (ગુજરાતી)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 7V12C3 17.55 6.84 22.74 12 24C17.16 22.74 21 17.55 21 12V7L12 2Z" fill="#102A43" stroke="#2CB67D" stroke-width="2"/>
+                        <path d="M12 6L6 9.5V12C6 15.7 8.5 19.1 12 20C15.5 19.1 18 15.7 18 12V9.5L12 6Z" fill="#2CB67D"/>
+                        <path d="M10 12L11.5 13.5L14.5 9.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span class="brand-name">Cyber<span class="brand-accent">Sense</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#benefits" data-i18n="nav_why">Why CyberSense</a>
+                <a href="#features" data-i18n="nav_features">Key Features</a>
+                <a href="#testimonials" data-i18n="nav_stories">Stories</a>
+                <a href="#cta" class="btn btn-primary nav-cta open-cta-modal" data-i18n="nav_cta">Start Learning</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Hero Section (1A, 1B, 1C, 1D, 2) -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <div class="badge-tag">
+                    <span class="shield-badge" data-i18n="hero_badge">🛡️ Designed Specifically for Seniors (60+)</span>
+                </div>
+                <!-- 1A Main Headline -->
+                <h1 class="main-headline" data-i18n="main_headline">Stay Safe Online — Made Simple for Seniors</h1>
+
+                <!-- 1B Supporting Headline -->
+                <p class="supporting-headline" data-i18n="supporting_headline">Learn to spot scam messages with easy, visual examples and regain your digital confidence.</p>
+
+                <!-- 1D Benefit Summary -->
+                <div class="benefit-summary-card">
+                    <p class="benefit-summary-text">
+                        <strong data-i18n="benefit_summary_title">What is CyberSense?</strong> <span data-i18n="benefit_summary_body">CyberSense teaches seniors how to recognise scams using simple, visual examples — protecting your hard-earned money and giving you peace of mind on your smartphone.</span>
+                    </p>
+                </div>
+
+                <!-- 2 Call to Action (CTA) -->
+                <div class="cta-group">
+                    <button class="btn btn-primary btn-large open-cta-modal">
+                        <span data-i18n="cta_main">Start Learning — It’s Easy</span>
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                    <a href="#hero-demo" class="btn btn-secondary btn-large">
+                        <span data-i18n="cta_secondary">See How It Works</span>
+                    </a>
+                </div>
+
+                <div class="trust-indicators">
+                    <span class="trust-item" data-i18n="trust_1">✓ 100% Free for Seniors</span>
+                    <span class="trust-item" data-i18n="trust_2">✓ Large Fonts & Clear Images</span>
+                    <span class="trust-item" data-i18n="trust_3">✓ No Complex Technical Jargon</span>
+                </div>
+            </div>
+
+            <!-- 1C Hero Shot (Interactive Smartphone Mockup displaying scam breakdown) -->
+            <div class="hero-shot-container" id="hero-demo">
+                <div class="phone-mockup">
+                    <div class="phone-speaker"></div>
+                    <div class="phone-screen">
+                        <div class="phone-header">
+                            <span class="phone-time">10:42 AM</span>
+                            <span class="phone-status" data-i18n="phone_status">📱 Messages</span>
+                        </div>
+
+                        <div class="scam-alert-banner">
+                            <span class="alert-icon">⚠️</span>
+                            <span data-i18n="phone_alert">Interactive Scam Detector</span>
+                        </div>
+
+                        <!-- Mock Text Message -->
+                        <div class="message-bubble scam-message">
+                            <div class="sender-info">
+                                <span class="sender-name" data-i18n="phone_sender">Unknown (+61 400 123 999)</span>
+                                <span class="time-stamp" data-i18n="phone_time">Just now</span>
+                            </div>
+                            <p class="message-text">
+                                <span class="highlight-scam" data-i18n="scam_urgent">URGENT:</span> <span data-i18n="scam_msg_text">Your bank account is locked! Click here immediately to verify:</span> <span class="highlight-link">bit.ly/bank-security-fix</span>
+                            </p>
+                            <div class="danger-tag">
+                                <span class="tag-icon">🚨</span> <span data-i18n="scam_tag">FAKE SCAM MESSAGE DETECTED</span>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Explanation Card -->
+                        <div class="scam-explanation">
+                            <h4 data-i18n="exp_title">How CyberSense protects you:</h4>
+                            <ul>
+                                <li class="check-item danger">
+                                    <span class="icon-bad">❌</span> <span><strong data-i18n="exp_warn_bold">Urgent Warning:</strong> <span data-i18n="exp_warn_text">Banks never ask you to click links in text messages.</span></span>
+                                </li>
+                                <li class="check-item safe">
+                                    <span class="icon-good">✅</span> <span><strong data-i18n="exp_safe_bold">Safe Action:</strong> <span data-i18n="exp_safe_text">Tap our 1-Touch button to call your official bank.</span></span>
+                                </li>
+                            </ul>
+                            <button class="phone-action-btn open-cta-modal" data-i18n="phone_action_btn">Practice Spotting Scams Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Show Them the Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="b_title">Why Seniors Love CyberSense</h2>
+                <p class="section-subtitle" data-i18n="b_subtitle">We break down online safety into bite-sized visual steps designed for clarity, comfort, and safety.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper teal">
+                        <span class="b-icon">📝</span>
+                    </div>
+                    <h3 data-i18n="b1_title">Simple, Clear Instructions</h3>
+                    <p data-i18n="b1_desc">No confusing computer terms. Step-by-step guidance written in clear, large print so you always feel in control.</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper red">
+                        <span class="b-icon">🔍</span>
+                    </div>
+                    <h3 data-i18n="b2_title">Real Scam Examples</h3>
+                    <p data-i18n="b2_desc">Practice identifying real fake SMS messages, suspicious bank emails, and scam caller tricks in a safe, stress-free environment.</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper teal">
+                        <span class="b-icon">🛡️</span>
+                    </div>
+                    <h3 data-i18n="b3_title">Protect Your Money</h3>
+                    <p data-i18n="b3_desc">Keep your life savings secure from online fraudsters and scammers with easy-to-remember safety rules.</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper blue">
+                        <span class="b-icon">⏱️</span>
+                    </div>
+                    <h3 data-i18n="b4_title">Learn at Your Own Pace</h3>
+                    <p data-i18n="b4_desc">Take 5 minutes a day from your smartphone or tablet. Pause, replay, or ask questions anytime you need.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features & Innovation Highlights -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="f_title">Key Features Built For You</h2>
+                <p class="section-subtitle" data-i18n="f_subtitle">Designed with input from seniors, family members, and digital safety experts.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🗣️</div>
+                    <div class="feature-text">
+                        <h3 data-i18n="f1_title">Voice-Assisted Learning</h3>
+                        <p data-i18n="f1_desc">Listen to instructions read aloud in clear, comforting speech if reading small text feels tiring.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">📞</div>
+                    <div class="feature-text">
+                        <h3 data-i18n="f2_title">Quick "Call Your Bank" Button</h3>
+                        <p data-i18n="f2_desc">Instant direct contact numbers for verified Australian & international banks when in doubt.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">👨‍👩‍👧</div>
+                    <div class="feature-text">
+                        <h3 data-i18n="f3_title">Family & Caregiver Support</h3>
+                        <p data-i18n="f3_desc">Optionally share your learning milestones with children or caregivers so they know you're safe.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🌏</div>
+                    <div class="feature-text">
+                        <h3 data-i18n="f4_title">Multilingual Support</h3>
+                        <p data-i18n="f4_desc">Available in English, Hindi, Mandarin, and Gujarati with intuitive visual icons.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 Social Proof Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="t_title">Trusted by Seniors & Loved Ones</h2>
+                <p class="section-subtitle" data-i18n="t_subtitle">Read how CyberSense is helping seniors browse and bank online with confidence.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="testimonial-quote" data-i18n="t1_quote">
+                        "I received a text saying my parcel couldn't be delivered unless I paid $3. Thanks to CyberSense visual guides, I spotted it was a scam right away without losing a dollar!"
+                    </blockquote>
+                    <div class="author-info">
+                        <div class="author-avatar">MA</div>
+                        <div>
+                            <div class="author-name" data-i18n="t1_author">Margaret A. (Age 72)</div>
+                            <div class="author-location" data-i18n="t1_location">Melbourne, VIC</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="testimonial-quote" data-i18n="t2_quote">
+                        "My elderly mother was always anxious about online banking. CyberSense gave her simple rules to follow. Now she feels independent and secure."
+                    </blockquote>
+                    <div class="author-info">
+                        <div class="author-avatar">RD</div>
+                        <div>
+                            <div class="author-name" data-i18n="t2_author">Robert D. (Son)</div>
+                            <div class="author-location" data-i18n="t2_location">Sydney, NSW</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="testimonial-quote" data-i18n="t3_quote">
+                        "We run digital literacy sessions in our community centre, and CyberSense is our go-to recommendation. The high-contrast text and voice reader are brilliant."
+                    </blockquote>
+                    <div class="author-info">
+                        <div class="author-avatar">SL</div>
+                        <div>
+                            <div class="author-name" data-i18n="t3_author">Sarah L.</div>
+                            <div class="author-location" data-i18n="t3_location">Aged Care Coordinator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Call to Action (CTA) Banner -->
+    <section class="cta-banner-section" id="cta">
+        <div class="container cta-banner-container">
+            <div class="cta-banner-content">
+                <h2 data-i18n="banner_title">Ready to Protect Yourself & Your Loved Ones?</h2>
+                <p data-i18n="banner_subtitle">Join thousands of seniors enjoying safe, worry-free online banking and messaging.</p>
+                <div class="cta-banner-buttons">
+                    <button class="btn btn-accent btn-large open-cta-modal" data-i18n="cta_main">
+                        Start Learning — It’s Easy
+                    </button>
+                    <a href="tel:1800000000" class="phone-link-btn" data-i18n="banner_phone">
+                        📞 Call Toll-Free Support: 1800 CYBER SENSE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="brand-name white">Cyber<span class="brand-accent">Sense</span></span>
+                <p data-i18n="footer_brand_desc">Empowering seniors (60+) with simple, visual cyber safety tools.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4 data-i18n="footer_community">Community & Support</h4>
+                    <a href="#" data-i18n="footer_libraries">Libraries & Workshops</a>
+                    <a href="#" data-i18n="footer_training">Aged Care Training</a>
+                    <a href="#" data-i18n="footer_family">Family Dashboard</a>
+                </div>
+                <div class="link-group">
+                    <h4 data-i18n="footer_partnerships">Partnerships</h4>
+                    <a href="#" data-i18n="footer_esafety">eSafety Commissioner</a>
+                    <a href="#" data-i18n="footer_telstra">Telstra Seniors Support</a>
+                    <a href="#" data-i18n="footer_bank">Bank Cyber Alliance</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p data-i18n="footer_copyright">&copy; 2025 CyberSense Project. Individual Credit Task 6.2C. Designed for senior safety.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive CTA Modal -->
+    <div id="cta-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+            <button class="modal-close" id="close-modal-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <span class="modal-icon">🛡️</span>
+                <h3 id="modal-title" data-i18n="modal_title">Start Learning with CyberSense</h3>
+                <p data-i18n="modal_subtitle">It's 100% free and takes less than 2 minutes to start!</p>
+            </div>
+            <form id="signup-form" onsubmit="event.preventDefault(); handleSignupSubmit();">
+                <div class="form-group">
+                    <label for="user-name" data-i18n="form_name_label">Your Full Name:</label>
+                    <input type="text" id="user-name" class="form-input" placeholder="e.g. Eleanor Smith" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-contact" data-i18n="form_contact_label">Email or Phone Number:</label>
+                    <input type="text" id="user-contact" class="form-input" placeholder="e.g. 0400 000 000 or name@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-role" data-i18n="form_role_label">I am a:</label>
+                    <select id="user-role" class="form-input">
+                        <option value="senior" data-i18n="role_senior">Senior (60+)</option>
+                        <option value="family" data-i18n="role_family">Family Member / Helper</option>
+                        <option value="caregiver" data-i18n="role_caregiver">Aged Care Coordinator</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" data-i18n="form_submit">Get Free Access Now</button>
+            </form>
+            <div id="modal-success" class="modal-success-message" style="display: none;">
+                <span class="success-icon">🎉</span>
+                <h3 data-i18n="modal_success_title">Welcome to CyberSense!</h3>
+                <p data-i18n="modal_success_desc">Thank you for signing up. Your simple safety guide is ready.</p>
+                <button class="btn btn-secondary btn-block" onclick="closeCtaModal()" data-i18n="modal_close_btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
