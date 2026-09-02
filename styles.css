@@ -95,16 +95,30 @@ body {
 }
 
 /* Scroll-Reveal Invisible-to-Visible Text & Card Animations */
-.reveal-text, .reveal-card {
+.reveal-text {
     opacity: 0;
-    transform: translateY(35px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(24px);
+    filter: blur(4px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
-.reveal-text.visible, .reveal-card.visible {
+.reveal-text.visible {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
+}
+
+.reveal-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 /* Accessibility Top Bar */
@@ -587,6 +601,53 @@ body.high-contrast .rating-badge {
     font-size: 0.92rem;
     font-weight: 700;
     cursor: pointer;
+}
+
+/* Background Decorative SVG Elements for Senior Care & Safety Theme */
+.hero-section, .benefits-section, .features-section, .testimonials-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-svg-decoration {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-bg-shield {
+    top: -20px;
+    left: -40px;
+    width: 320px;
+    height: 320px;
+}
+
+.hero-bg-hands {
+    bottom: 20px;
+    right: 5%;
+    width: 220px;
+    height: 220px;
+}
+
+.benefits-bg-mag {
+    top: 40px;
+    right: -30px;
+    width: 300px;
+    height: 300px;
+}
+
+.features-bg-family {
+    bottom: -40px;
+    left: -50px;
+    width: 380px;
+    height: 380px;
+}
+
+.testimonials-bg-heart {
+    top: 30px;
+    right: 10%;
+    width: 280px;
+    height: 280px;
 }
 
 /* Section Common Styling */
